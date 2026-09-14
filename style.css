@@ -1,0 +1,247 @@
+/* ==========================================================================
+   Aarón Ulises Torres Corte - ulisestc.github.io
+   Estilo: Brutalista / Early Internet minimalista
+   ========================================================================== */
+
+:root {
+  --bg: #ffffff;
+  --text: #121212;
+  --text-muted: #555555;
+  --border: #121212;
+  --border-light: #cccccc;
+  --link: #0000ee;
+  --link-visited: #551a8b;
+  --link-hover-bg: #121212;
+  --link-hover-text: #ffffff;
+  --btn-bg: #ffffff;
+  --btn-text: #121212;
+  --box-shadow: 3px 3px 0px #121212;
+  --box-bg: #f9f9f9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101010;
+    --text: #e6e6e6;
+    --text-muted: #999999;
+    --border: #e6e6e6;
+    --border-light: #333333;
+    --link: #66b2ff;
+    --link-visited: #b388ff;
+    --link-hover-bg: #e6e6e6;
+    --link-hover-text: #101010;
+    --btn-bg: #181818;
+    --btn-text: #e6e6e6;
+    --box-shadow: 3px 3px 0px #e6e6e6;
+    --box-bg: #181818;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "Courier New", monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Encabezado */
+header {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+  line-height: 1.2;
+}
+
+.role {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.location {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Divisores */
+hr {
+  border: 0;
+  border-top: 1px dashed var(--border-light);
+  margin: 1.75rem 0;
+}
+
+/* Secciones */
+section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.25rem;
+  display: inline-block;
+}
+
+/* Enlaces */
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  background-color: var(--link-hover-bg);
+  color: var(--link-hover-text);
+  text-decoration: none;
+}
+
+/* Botones principales de acción */
+.actions-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.15rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid var(--border);
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+.btn:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px var(--border);
+  background-color: var(--border);
+  color: var(--bg);
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px var(--border);
+}
+
+.btn-secondary {
+  border-style: dashed;
+  box-shadow: none;
+  font-weight: normal;
+}
+
+.btn-secondary:hover {
+  border-style: solid;
+  box-shadow: none;
+}
+
+/* Tablas / Listas de contacto */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.info-table td {
+  padding: 0.35rem 0;
+  vertical-align: top;
+}
+
+.info-table td:first-child {
+  width: 140px;
+  color: var(--text-muted);
+}
+
+/* Proyectos */
+.project-card {
+  border: 1px solid var(--border-light);
+  background-color: var(--box-bg);
+  padding: 1rem 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.project-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+  padding: 0.1rem 0.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.project-desc {
+  font-size: 0.92rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.project-tech {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Habilidades / Stack */
+.stack-list {
+  list-style-type: none;
+}
+
+.stack-list li {
+  margin-bottom: 0.4rem;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.stack-list li::before {
+  content: "»";
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
