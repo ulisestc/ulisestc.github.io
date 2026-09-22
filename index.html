@@ -3,19 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sitio personal de Aarón Ulises Torres Corte. Desarrollador Backend y estudiante de Ingeniería en TI (BUAP). Contacto y descarga de CV.">
+  <meta name="description" content="Sitio personal de Aarón Ulises Torres Corte. Desarrollador Backend y estudiante de Ingeniería en TI (BUAP). Contacto y proyectos.">
   <meta name="author" content="Aarón Ulises Torres Corte">
   <title>Aarón Ulises Torres Corte · Backend Developer</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || saved === 'light') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    })();
+  </script>
 </head>
 <body>
   <div class="container">
+
+    <!-- Barra de selección de tema (default: sistema) -->
+    <div class="theme-bar">
+      <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Cambiar tema de color">&#91;tema: auto&#93;</button>
+    </div>
 
     <!-- Encabezado -->
     <header>
       <h1>Aarón Ulises Torres Corte</h1>
       <p class="role">Desarrollador Backend &middot; Estudiante de Ingeniería en TI</p>
-      <p class="location">Puebla, México &middot; BUAP (9no Semestre &middot; Promedio: 9.4/10)</p>
+      <p class="location">Puebla, México &middot; BUAP</p>
     </header>
 
     <!-- Acciones principales -->
@@ -34,6 +47,10 @@
           <tr>
             <td>Email</td>
             <td><a href="mailto:ulisestc27@gmail.com">ulisestc27@gmail.com</a></td>
+          </tr>
+          <tr>
+            <td>LinkedIn</td>
+            <td><a href="https://www.linkedin.com/in/autc/" target="_blank" rel="noopener noreferrer">linkedin.com/in/autc</a></td>
           </tr>
           <tr>
             <td>GitHub</td>
@@ -57,56 +74,62 @@
 
     <hr>
 
-    <!-- Sobre Mí -->
+    <!-- Perfil Técnico -->
     <section>
-      <h2>Perfil</h2>
+      <h2>Perfil Técnico</h2>
       <p>
-        Desarrollador Backend enfocado en el diseño de sistemas robustos, APIs RESTful y arquitecturas de datos de alto rendimiento. Apasionado por las buenas prácticas de ingeniería de software, separación de responsabilidades y principios SOLID.
+        Desarrollador Backend enfocado en el diseño de arquitecturas robustas, APIs RESTful y sistemas de alto rendimiento. Apasionado por las buenas prácticas de ingeniería de software, separación de responsabilidades y principios SOLID.
       </p>
       <br>
       <p>
-        Actualmente cursando el 9no semestre de Licenciatura en Ingeniería en Tecnologías de la Información en la Benemérita Universidad Autónoma de Puebla (BUAP) y realizando servicio social como desarrollador backend.
+        Cuento con bases sólidas en programación orientada a objetos, modelado relacional y desarrollo con Python (Django, FastAPI). Experiencia práctica en control de transacciones (ACID), arquitecturas asíncronas desacopladas con brokers de mensajes, contenerización con Docker y fundamentos de Cloud (AWS). Actualmente cursando el 9no semestre de Ingeniería en TI en la BUAP (promedio: 9.4/10).
       </p>
+    </section>
+
+    <hr>
+
+    <!-- Experiencia Técnica -->
+    <section>
+      <h2>Experiencia Técnica</h2>
+      <div class="project-card">
+        <div class="project-title">Universidad Tecnológica de Huejotzingo</div>
+        <span class="project-tag">Desarrollador Backend (Servicio Social) &middot; Jun. 2026 – Nov. 2026</span>
+        <p class="project-desc">
+          Desarrollo del backend para la plataforma de Bolsa de Trabajo Institucional utilizando Django REST Framework y MySQL. Implementación de autenticación, control de acceso por roles (RBAC), lógica de negocio y rutinas automáticas por correo para avisos del sistema. Contenerización del proyecto con Docker para asegurar entornos consistentes de pruebas y desarrollo.
+        </p>
+        <p class="project-tech"><strong>Stack:</strong> Python, Django REST Framework, MySQL, Docker.</p>
+      </div>
     </section>
 
     <hr>
 
     <!-- Proyectos Destacados -->
     <section>
-      <h2>Proyectos</h2>
+      <h2>Proyectos y Logros Destacados</h2>
 
       <div class="project-card">
         <div class="project-title">StoreHub</div>
-        <span class="project-tag">1er Lugar Feria de Proyectos BUAP 2026 &middot; Representante en Infomatrix Colombia</span>
+        <span class="project-tag">1er Lugar en Feria de Proyectos BUAP 2026 &middot; Delegado Infomatrix Colombia</span>
         <p class="project-desc">
-          Plataforma de digitalización orientada a microempresas (punto de venta e inventario) con soporte offline-first. Integra sincronización masiva automática, panel estadístico y asistente financiero con Inteligencia Artificial.
+          Plataforma web de punto de venta e inventario para microcomercios con soporte offline-first (equipo de 4 integrantes). <strong>Responsable del desarrollo integral del backend:</strong> diseño de la API RESTful en Django y PostgreSQL, asegurando la atomicidad de transacciones críticas (corte de caja e inventario). Implementación del motor para dashboard estadístico, integración de chatbot con IA para asesoría financiera, tareas asíncronas con Celery y Redis, y despliegue del servicio en la nube.
         </p>
-        <p class="project-tech"><strong>Stack:</strong> Django REST Framework, PostgreSQL, Angular 19, Celery, Redis, Docker.</p>
-      </div>
-
-      <div class="project-card">
-        <div class="project-title">Bolsa de Trabajo Institucional UTH</div>
-        <span class="project-tag">Servicio Social &middot; 2026 – Presente</span>
-        <p class="project-desc">
-          Arquitectura y desarrollo del backend para conectar egresados, empresas y administración en la Universidad Tecnológica de Huejotzingo. Control de acceso por roles (RBAC), borrado lógico y alertas automatizadas por correo.
-        </p>
-        <p class="project-tech"><strong>Stack:</strong> Python, Django REST Framework, MySQL, Docker.</p>
+        <p class="project-tech"><strong>Stack:</strong> Django REST Framework, PostgreSQL (ACID), Celery, Redis, Docker, Angular.</p>
       </div>
 
       <div class="project-card">
         <div class="project-title">AGM System MS</div>
-        <span class="project-tag">Microservicios &middot; 2026</span>
+        <span class="project-tag">Proyecto de Microservicios &middot; 2026</span>
         <p class="project-desc">
-          Sistema integral para gestión académica con módulos independientes de asistencia (QR dinámico), calificaciones y reportes.
+          Arquitectura distribuida para gestión escolar: desarrollo del API Gateway en FastAPI para enrutamiento de los microservicios. Implementación de un broker de mensajes para gestionar la comunicación asíncrona y desacoplada entre microservicios. Colaboración en microservicio de notificaciones (Node.js/Express) y despliegue integral de la plataforma con Docker.
         </p>
-        <p class="project-tech"><strong>Stack:</strong> Arquitectura políglota (Python / Node.js), API Gateway asíncrono, Docker Compose.</p>
+        <p class="project-tech"><strong>Stack:</strong> Python (FastAPI), Node.js (Express), Broker de mensajes, Docker Compose.</p>
       </div>
 
       <div class="project-card">
         <div class="project-title">Hackathon BI UPAEP</div>
         <span class="project-tag">Reingeniería de Datos &middot; 2026</span>
         <p class="project-desc">
-          Migración y normalización estricta a Tercera Forma Normal (3NF) para el sistema heredado de una compañía de agua, eliminando redundancia y construyendo una PoC en tiempo real.
+          Reestructuración de un esquema legacy en MS Access hacia una base relacional normalizada en 3NF (MySQL) para un organismo de agua. Construcción de una PoC en FastAPI para validar reglas de negocio en tiempo real y evitar inconsistencias en la captura.
         </p>
         <p class="project-tech"><strong>Stack:</strong> MySQL (3NF), FastAPI, Streamlit.</p>
       </div>
@@ -116,19 +139,55 @@
 
     <!-- Habilidades -->
     <section>
-      <h2>Habilidades Técnicas</h2>
+      <h2>Conocimientos y Habilidades</h2>
       <ul class="stack-list">
-        <li><strong>Backend:</strong> Python, Django REST Framework, FastAPI, APIs RESTful, Microservicios, Principios SOLID.</li>
-        <li><strong>Bases de Datos &amp; Datos:</strong> PostgreSQL (ACID), MySQL, Normalización relacional (3NF), Pandas.</li>
-        <li><strong>Infraestructura &amp; Seguridad:</strong> Docker, Docker Compose, Linux, RBAC, Autenticación JWT, Git.</li>
+        <li><strong>Lenguajes y Frameworks:</strong> Python (Django REST Framework, FastAPI), Go (fundamentos), SQL.</li>
+        <li><strong>Bases de Datos y Colas:</strong> PostgreSQL, MySQL, Redis, normalización (3NF), brokers de mensajes (eventos asíncronos), atomicidad (ACID).</li>
+        <li><strong>Cloud y DevOps:</strong> Fundamentos de AWS (S3, IAM, Lambda, CloudWatch, CloudFront), Docker, Docker Compose, nociones básicas de CI/CD, Linux, Git.</li>
+        <li><strong>Buenas Prácticas:</strong> APIs RESTful, Principios SOLID, Programación Orientada a Objetos, trabajo en equipo y control de versiones.</li>
       </ul>
     </section>
 
     <!-- Pie de página -->
     <footer>
-      <div>ulisestc.github.io &middot; Otoño 2026</div>
+      <div>ulisestc.github.io &middot; 2026</div>
     </footer>
 
   </div>
+
+  <!-- Script para alternar temas (default: sistema) -->
+  <script>
+    const themeBtn = document.getElementById('theme-toggle');
+    const modes = ['system', 'dark', 'light'];
+    const labels = {
+      system: '[tema: auto]',
+      dark: '[tema: oscuro]',
+      light: '[tema: claro]'
+    };
+
+    function getCurrentMode() {
+      const saved = localStorage.getItem('theme');
+      return (saved === 'dark' || saved === 'light') ? saved : 'system';
+    }
+
+    function applyMode(mode) {
+      if (mode === 'system') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.removeItem('theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', mode);
+        localStorage.setItem('theme', mode);
+      }
+      themeBtn.textContent = labels[mode];
+    }
+
+    themeBtn.textContent = labels[getCurrentMode()];
+
+    themeBtn.addEventListener('click', function() {
+      const current = getCurrentMode();
+      const nextIndex = (modes.indexOf(current) + 1) % modes.length;
+      applyMode(modes[nextIndex]);
+    });
+  </script>
 </body>
 </html>
